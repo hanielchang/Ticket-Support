@@ -1,0 +1,14 @@
+.card-body {
+ flex-direction: row;
+}
+.btn {
+    text-align: center;
+    width: 100%;
+}
+
+.form-input {
+    width: 100%;
+}
+ #category {
+     margin-top: 10px;
+ }

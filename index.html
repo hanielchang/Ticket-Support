@@ -10,9 +10,30 @@
 
 </head>
 <body>
-<header class="text-center">
+<header class="jumbotron flex-row text-center">
     <h1>Ticket Support</h1>
+    <p> Get 24/7  live access to ticket support from your desk.</br> We help you get moving!</p>
 </header>
+
+<main class="flex-row justify-space-between">
+    <div class="col-12 col-md-4">
+        <div class="card">
+           
+            <form id="user-form" class="card-body">
+                <label class="form-label" for="username">username:</label>
+                <input name="username" id="username" type="text" autofocus="true" class="form-input" /> </br>
+                <label class="form-label" for="password">password:</label>
+                <input name="username" id="username" type="text" autofocus="true" class="form-input" /> </br>
+                <label for="">Choose a category:</label>
+                 <select name="category" id="category">
+                    <option value="hardware">Hardware</option>
+                    <option value="software">Software</option>
+                    <option value="permission">Permission</option>
+                </select> </br>
+                <button type="button" class="btn btn-primary text-center">Login</button>
+            </form>
+        </div>
+</main>
   
     
 <script src="./assets/script/script.js"></script>
