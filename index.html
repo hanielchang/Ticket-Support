@@ -12,12 +12,12 @@
 </head>
 
 <body>
-    <header class="jumbotron text-center">
-        <h1>Ticket Support</h1>
+    <header class="jumbotron col-12  bg-dark text-light sticky-top d-flex flex-column p-4 p-lg-3  text-center">
+        <h1 class="display-4">Ticket Support</h1>
         <p> Get 24/7 live access to ticket support from your desk.</br> We help you get moving!</p>
     </header>
 
-    <main class="flex-row justify-space-between">
+    <main class="flex-column justify-space-between">
         <div class="col-12 col-md-4">
             <div class="card">
                 <form id="user-form" class="card-body">
@@ -28,18 +28,18 @@
                         minlength="8" required/> </br>
                     <button type="submit" value="sign in" class="btn btn-primary text-center">Login</button>
                     <button type="button" value="signUp" id="modal" class="btn btn-success text-center"
-                        data-toogle="modal" data-target="#modal-fade">Sign Up</button>
+                        data-toogle="modal" data-target="#modalForm">Create New Account</button>
                 </form>
             </div>
 
-            <div class="modal-fade" id="modalCenter" tabindex="-1" role="dialog" aria-labelledby="modalCenter"
+            <div class="modal-fade" id="modalForm" tabindex="-1" role="dialog" aria-labelledby="modalForm"
                 aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
                             <h5 class="modal-title" id="modalTitle">Sign Up </br>It's quick and easy.</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span class='closeBtn' aria-hidden="true">&times;</span>
+                                <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
                         <div class="modal-body">
@@ -49,8 +49,10 @@
                                 <label class="modal-label" for="lastname"></label>
                                 <input name="lastname" id="lastname" type="text" autofocus="true" placeholder="Last name" /> 
                                 <label class="modal-label" for="email"></label>
-                                <input name="email" id="email" type="text" autofocus="true" placeholder="email" />
-
+                                <input name="email" id="email" type="text" autofocus="true" placeholder="Email" />
+                                <label class="modal-label" for="newpassword"></label>
+                                <input name="newpassword" id="newpassword" type="password" autofocus="true" placeholder="New Password" />
+                                
                             </form>
                         </div>
                         <div class="modal-footer">
@@ -62,7 +64,7 @@
             </div>
     </main>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.1/js/bootstrap.min.js"></script> 
     <script src="./assets/script/script.js"></script>
 </body>
 
