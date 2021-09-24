@@ -1,6 +1,10 @@
-.card-body {
- flex-direction: row;
-}
+
+.card {
+ position: relative;
+
+ left: 200%;
+ top: 20px;
+} 
 
 
 .btn {
@@ -82,5 +86,5 @@
  .modal-content {
   align-items:flex-end;
      
-    
+ } 
  }
