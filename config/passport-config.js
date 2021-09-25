@@ -1,27 +1,39 @@
 const LocalStrategy = require('passport-local').Strategy;
 const bcrypt = require('bcrypt');
+const passport = require('passport');
 
-function initialize(passport, getUserByUsername, getUsetById) {
-    const authenticateUser = async (username, password, done) => {
-        const user = getUserByUsername(username)
-        if (user == null) {
-            return done(null, false, { message: 'Username or Password is incorrect' });
-        }
+// function initialize(passport, getUserByUsername, getUsetById) {
+const authenticateUser = async (username, password, done) => {
+    
+    /* const user = */
 
-        try {
-            if (await bcrypt.compare(password, user.password)) {
-                return done(null, user)
-            } else {
-                return done(null, false, { message: 'Username or Password is incorrect' })
-            }
-        } catch (err) {
-            return done(err);
-        }
+    const user = {
+        id: 0,
+        username: 'Mazive_Velocity',
+        email: 'cayman.g@hotmail.com',
+        password: 'password'
+    };
+
+    if (user == null) {
+        console.log('no user');
+        return done(null, false, { message: 'Username or Password is incorrect' });
     }
 
-    passport.use(new LocalStrategy({ usernameField: 'username', passwordField: 'passwword' }, authenticateUser));
-    passport.serializeUser((user, done) => done(null, user.id));
-    passport.deserializeUser((id, done) => done(null, getUsetById(id)))
+    try {
+        if (await bcrypt.compare(password, user.password)) {
+            console.log('password is correct');
+            console.log(user);
+            return done(null, user);
+        } else {
+            console.log('wrong password');
+            return done(null, false, { message: 'Username or Password is incorrect' })
+        }
+    } catch (err) {
+        console.log('error');
+        return done(err);
+    }
 }
 
-module.exports = initialize;
+passport.use(new LocalStrategy(authenticateUser));
+passport.serializeUser((user, done) => done(null, user.id));
+passport.deserializeUser((id, done) => done(null, getUsetById(id)));

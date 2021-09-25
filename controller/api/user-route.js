@@ -2,24 +2,16 @@ const users = []
 
 const bcrypt = require('bcrypt');
 const passport = require('passport');
-const initializePassport = require('../../config/passport-config');
-const flash = require('express-flash');
-
-initializePassport(passport,
-    function(username){ users.find(user => user.username === username)},
-    id => users.find(user => user.id === id)
-);
 
 const router = require('express').Router();
-router.use(passport.initialize());
-router.use(passport.session());
-router.use(flash())
 
 router.post('/login', passport.authenticate('local', {
     successRedirect: '/',
-    failureRedirect: '/test',
+    failureRedirect: '/login',
     failureFlash: true
-}));
+}),(req, res) => {
+    res.render('homepage', user)
+});
 
 router.post('/register', async (req, res) => {
     const encrtpyedPW = await bcrypt.hash(req.body.password, 10)
