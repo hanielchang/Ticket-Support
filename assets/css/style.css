@@ -67,7 +67,8 @@
  .modal-title {
      margin-left: 100px;
      text-align: center;
-  
+     font-weight: bolder;
+     overflow: hidden;
  }
 
  .close:hover, .closeBtn:focus {
