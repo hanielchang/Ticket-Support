@@ -53,7 +53,7 @@ router.post('/login', passport.authenticate('local', {
   failureRedirect: '/login',
   failureFlash: true
 }), (req, res) => {
-  res.render('homepage', user);
+  res.status(200).json({message: 'success'});
 });
 
 router.put('/:id', (req, res) => {
