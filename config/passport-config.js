@@ -6,6 +6,7 @@ const passport = require('passport');
 const authenticateUser = async (username, password, done) => {
     
     /* const user = */
+    
 
     const user = {
         id: 0,
@@ -26,7 +27,7 @@ const authenticateUser = async (username, password, done) => {
             return done(null, user);
         } else {
             console.log('wrong password');
-            return done(null, false, { message: 'Username or Password is incorrect' })
+            return done(null, false, { message: 'Username or Password is incorrect' });
         }
     } catch (err) {
         console.log('error');

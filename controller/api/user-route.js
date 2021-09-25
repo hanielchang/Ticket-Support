@@ -1,5 +1,3 @@
-const users = []
-
 const bcrypt = require('bcrypt');
 const passport = require('passport');
 
@@ -10,7 +8,7 @@ router.post('/login', passport.authenticate('local', {
     failureRedirect: '/login',
     failureFlash: true
 }),(req, res) => {
-    res.render('homepage', user)
+    res.render('homepage', user);
 });
 
 router.post('/register', async (req, res) => {

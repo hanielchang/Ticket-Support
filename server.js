@@ -13,11 +13,10 @@ const app = express();
 
 const sess = {
     secret: 'secret',
-    cookie: {},
+    cookie: {expires: 5000},
     resave: false,
     saveUninitialized: true,
 }
-
 
 app.engine('handlebars', exphbs());
 app.set('view engine', 'handlebars');
