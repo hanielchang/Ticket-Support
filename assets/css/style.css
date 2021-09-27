@@ -1,11 +1,4 @@
 
-.card {
- position: relative;
-
- left: 200%;
- top: 20px;
-} 
-
 
 .btn {
     text-align: center;
@@ -34,7 +27,7 @@
      background-color: rgba(0,0,0, 0.5);
      text-align: center;
  }
- #email, #newpassword{
+ #email, #newpassword {
      top: 12px;
      width: 88%;
      margin: 10px;
@@ -44,6 +37,7 @@
  }
 
  .modal-content {
+
      display: inline;
      background-color: #f4f4f4;
      margin: 20% auto;
@@ -68,7 +62,7 @@
      margin-left: 100px;
      text-align: center;
      font-weight: bolder;
-     overflow: hidden;
+     
  }
 
  .close:hover, .closeBtn:focus {
@@ -78,14 +72,16 @@
  }
 
  @media (min-width: 576px) { 
-     
+.jumbotron {
+
+} 
  .modal-body {
      display:flex;
      flex-direction: row;
      text-align: start;
  }
  .modal-content {
-  align-items:flex-end;
-     
+     overflow: hidden;
+   
  } 
  }
