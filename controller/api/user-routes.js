@@ -49,11 +49,10 @@ router.post('/', (req, res) => {
 });
 
 router.post('/login', passport.authenticate('local', {
-  successRedirect: '/',
-  failureRedirect: '/login',
-  failureFlash: true
+  successRedirect: '../',
+  failureRedirect: '/login'
 }), (req, res) => {
-  res.status(200).json({message: 'success'});
+  res.status(200).json(req.user);
 });
 
 router.put('/:id', (req, res) => {
@@ -63,18 +62,16 @@ router.put('/:id', (req, res) => {
     where: {
       id: req.params.id
     }
-  })
-    .then(dbUserData => {
-      if (!dbUserData[0]) {
-        res.status(404).json({ message: 'No user found with this id' });
-        return;
-      }
-      res.json(dbUserData);
-    })
-    .catch(err => {
-      console.log(err);
-      res.status(500).json(err);
-    });
+  }).then(dbUserData => {
+    if (!dbUserData[0]) {
+      res.status(404).json({ message: 'No user found with this id' });
+      return;
+    }
+    res.json(dbUserData);
+  }).catch(err => {
+    console.log(err);
+    res.status(500).json(err);
+  });
 });
 
 router.delete('/:id', (req, res) => {
