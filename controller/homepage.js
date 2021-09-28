@@ -3,8 +3,6 @@ const { User } = require('../Models');
 const router = require('express').Router();
 
 router.get('/', (req, res) => {
-    
-    console.log(req.session.passport.user);
     User.findOne({
         where: {
             id: req.session.passport.user
