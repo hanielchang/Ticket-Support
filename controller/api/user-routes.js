@@ -34,28 +34,35 @@ router.get('/:id', (req, res) => {
 
 router.post('/', (req, res) => {
 
-  console.log(req.body);
   User.create({
     username: req.body.username,
     email: req.body.email,
     password: req.body.password,
     role: req.body.role
-  })
-    .then(dbUserData => res.json(dbUserData))
-    .catch(err => {
-
-      res.status(500).json(err);
+  }).then(dbUserData => {
+    const user = dbUserData.dataValues
+    console.log('starting login');
+    req.login(user, async function(err) {
+      if (err) { return next(err); }
+      console.log('no errors');
+      console.log(req.session);
+      return res.status(200);
     });
+  });
 });
 
 router.post('/login', passport.authenticate('local', {
-  successRedirect: '/',
-  failureRedirect: '/login',
-  failureFlash: true,
-}));
+  failureRedirect: '/',
+  failureFlash: true
+}), async (req, res) => {
+  console.log('login successful');
+  console.log(req.session);
+  res.redirect('/homepage');
+});
 
-router.get('/logut', (req, res) => {
+router.get('/logut', async (req, res) => {
   req.logOut();
+  res.redirect('/');
 });
 
 router.put('/:id', (req, res) => {

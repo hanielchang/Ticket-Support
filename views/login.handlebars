@@ -1,24 +1,59 @@
-<form class="login-form">
-    <label for="username">Username</label>
-    <input type="text" name="username" id="username-login">
-    <label for="password">Password</label>
-    <input type="password" name="password" id="password-login"> 
-    <button type="submit" id="login">Log in</button>
-</form>
+<body>
+    <header class="jumbotron col-12 bg-dark text-light  d-flex flex-column p-4 p-lg-3  text-center">
+        <h1 class="display-4">Ticket Support</h1>
+        <p> Get 24/7 live access to ticket support from your desk.</br> We help you get moving!</p>
+    </header>
 
-<h1>Sign up</h1>
-<form class="register-form">
-    <label for="username">Username</label>
-    <input type="text" name="username" id="username-register">
-    <label for="email">email</label>
-    <input type="email" name="email" id="email-register">
-    <label for="password">Password</label>
-    <input type="password" name="password" id="password-register">
-    <button type="submit" id="submit">Submit</button>
-</form>
+    <main class="flex-column justify-space-between">
+        <div class="col-12 col-md-4">
+            <div class="card">
+                <form id="login-form" class="card-body">
+                    <label class="form-label" for="username-login">Username:</label>
+                    <input name="username-login" id="username-login" type="username" autofocus="true" class="form-input" />
+                    </br>
+                    <label class="form-label" for="password-login">password:</label>
+                    <input name="password-login" id="password-login" type="password" autofocus="true"
+                        class="form-input" minlength="8" required /> </br>
+                    <button type="submit" value="sign in" class="btn btn-primary text-center"
+                        id="login-btn">Login</button>
+                    <button type="button" value="signUp" id="create-account" class="btn btn-success text-center"
+                        data-toogle="modal" data-target="#modalForm">Create New Account</button>
+                </form>
+            </div>
 
-<script
-  src="https://code.jquery.com/jquery-3.6.0.js"
-  integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
-  crossorigin="anonymous"></script>
-<script src="./js/login.js"></script>
+            <div class="modal-fade" id="modalForm" tabindex="-1" role="dialog" aria-labelledby="modalForm"
+                aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="modalTitle">Sign Up </br>It's quick and easy.</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form id="signup-form" id='login'>
+                                <label class="modal-label" for="username-register"></label>
+                                <input name="username-register" id="username-register" type="username" autofocus="true"
+                                    placeholder="Choose username" />
+                                <label class="modal-label" for="email-register"></label>
+                                <input name="email-register" id="email-register" type="email" autofocus="true"
+                                    placeholder="email" />
+                                <label class="modal-label" for="password-register"></label>
+                                <input name="password-register" id="password-register" type="password" autofocus="true"
+                                    minlength="8" placeholder="New Password" />
+                                {{!-- <label class="modal-label" for="Password"></label>
+                                <input name="password" id="Password" type="password" autofocus="true"
+                                    placeholder="Confirm Password" /> --}}
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" id="modal-close">Close</button>
+                            <button type="button" class="btn btn-primary" id="sign-up">Sign Up</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </main>
+
+    <script src="./js/login.js"></script>

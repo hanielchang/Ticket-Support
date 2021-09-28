@@ -1,3 +1,8 @@
+// var createBtn = $("#create-account");
+// var closeBtn = $(".close");
+// var modalClose = $("#modal-close");
+// var signUpBtn = $("sign-up");
+
 async function logInFormHandler(event) {
   event.preventDefault();
 
@@ -14,19 +19,24 @@ async function logInFormHandler(event) {
       headers: { 'Content-Type': 'application/json' }
     });
     console.log(response, 'login submitted');
+    if (response.ok) {
+      // window.location.href = '/homepage';
+    }
   }
 }
 
-document.querySelector('.login-form').addEventListener('submit', logInFormHandler);
+$('#login-form').on('submit', logInFormHandler);
 
 
 async function registerFormHandler(event) {
   event.preventDefault();
 
+  console.log('submit signup');
+
   const username = $('#username-register').val().trim();
   const email = $('#email-register').val().trim();
   const password = $('#password-register').val().trim();
-  const role = 'user';
+  // const role = 'user';
 
   if (username && password && email) {
     const response = await fetch('/api/users', {
@@ -39,7 +49,28 @@ async function registerFormHandler(event) {
       headers: { 'Content-Type': 'application/json' }
     });
     console.log(response);
+    // window.location.href = '/homepage';
   }
 }
 
-document.querySelector('.register-form').addEventListener('submit', registerFormHandler);
+$('#sign-up').on('click', registerFormHandler);
+
+// var displayLogin = (tickets) => {
+
+//   for (let i = 0; i < tickets.length; i++) {
+//     var ticketEl = document.createElement("a");
+//     ticketEl.setAttribute = ("target", "_blank");
+//   }
+//   // clear 
+// }
+
+
+$("#create-account").on('click', () => {
+  $(".modal-fade").css('display', 'grid');
+});
+$(".close").on('click', () => {
+  $(".modal-fade").hide();
+});
+$("#modal-close").on('click', () => {
+  $(".modal-fade").hide();
+});
