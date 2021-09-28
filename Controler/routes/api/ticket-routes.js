@@ -28,9 +28,24 @@ router.get('/', (req, res) => {
 });
 
   router.get('/:id', (req, res) => {
-    Ticket.findOne({
+    Ticket.findAll({
+      attributes: [
+        'id',
+        'title',
+        'category',
+        'content',
+        'status',
+        'created_at'
+      ],
+      order: [['created_at']], //oldest to newest
+      include: [
+        {
+          model: User,
+          attributes: ['username']
+        }
+      ],
       where: {
-        id: req.params.id
+        UserId: req.params.id
       }
     })
       .then(dbUserData => {
