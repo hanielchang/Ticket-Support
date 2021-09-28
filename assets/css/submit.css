@@ -1,0 +1,100 @@
+:root {
+    --primary-color: #fce138;
+    --secondary-color: #024e76;
+    --tertiary-color: #39a6b2;
+  
+  }
+
+.header {
+    padding: 20px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color: #2a607c;
+    color: #ffffff;
+  }
+
+.drop-down {
+    margin: 20px 0 20px 20px;
+    display: flex;
+    flex-wrap: row;
+    width: 10%;
+    border-radius: 10px;
+  }
+  
+  /* styling for the tags 'Questions?' and 'Return Home' */
+  .header h1 {
+    display: inline-block;
+    /* font-size: 48px; */
+  }
+  
+  .header div {
+    /* margin-right: 20px; */
+    float: right;
+    /* font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; */
+    /* font-size: 20px; */
+  }
+  
+  a {
+    color: #ffffff;
+    text-decoration: none;
+  }
+
+  .header div ul {
+    list-style-type: none;
+  }
+
+  .header div ul li {
+    display: inline-block;
+    margin-left: 25px;
+  }
+  /* ---------------------------- */
+
+body {
+    background-image: url("../../assets/images/laptop.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-position: 80%;
+}
+
+.contact-form input, .contact-form textarea {
+    border: 1px solid var(--secondary-color);
+    display: block;
+    padding: 7px 15px;
+    font-size: 16px;
+    color: var(--secondary-color);
+    width: 20%;
+    margin-bottom: 15px;
+    margin-top: 5px;
+    border-radius: 10px;
+    background-color: rgba(255,255,255, 0.75);
+  }
+
+.contact-form input {
+  margin-left: 20px;
+}
+
+.contact-form textarea {
+  margin-left: 20px;
+  height: 150px;
+  }
+
+.contact-form input:focus, .contact-form textarea:focus {
+    background-color: rgba(255,255,255, 1);
+    outline: none;
+  }
+.contact-form button {
+    width: 10%;
+    margin-left: 20px;
+    border: none;
+    background: WhiteSmoke;
+    color: var(--secondary-color);
+    text-align: center;
+    padding: 15px 0;
+    font-size: 16px;
+    border-radius: 10px;
+  }
+  
+.contact-form button:hover {
+    color: var(--primary-color);
+    background: var(--tertiary-color);
+  }
