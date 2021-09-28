@@ -15,7 +15,7 @@ const app = express();
 
 const sess = {
     secret: 'secret',
-    cookie: { expires: 5000 },
+    cookie: { expires: 5 * 60000 },
     resave: false,
     saveUninitialized: true,
 }

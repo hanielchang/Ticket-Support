@@ -8,7 +8,7 @@ router.get('/', (req, res) => {
   User.findAll()
     .then(dbUserData => res.json(dbUserData))
     .catch(err => {
-      console.log(err);
+
       res.status(500).json(err);
     });
 });
@@ -27,7 +27,7 @@ router.get('/:id', (req, res) => {
       res.json(dbUserData);
     })
     .catch(err => {
-      console.log(err);
+
       res.status(500).json(err);
     });
 });
@@ -43,16 +43,19 @@ router.post('/', (req, res) => {
   })
     .then(dbUserData => res.json(dbUserData))
     .catch(err => {
-      console.log(err);
+
       res.status(500).json(err);
     });
 });
 
 router.post('/login', passport.authenticate('local', {
-  successRedirect: '../',
-  failureRedirect: '/login'
-}), (req, res) => {
-  res.status(200).json(req.user);
+  successRedirect: '/',
+  failureRedirect: '/',
+  failureFlash: true,
+}));
+
+router.get('/logut', (req, res) => {
+  req.logOut();
 });
 
 router.put('/:id', (req, res) => {
@@ -69,7 +72,6 @@ router.put('/:id', (req, res) => {
     }
     res.json(dbUserData);
   }).catch(err => {
-    console.log(err);
     res.status(500).json(err);
   });
 });
@@ -88,7 +90,7 @@ router.delete('/:id', (req, res) => {
       res.json(dbUserData);
     })
     .catch(err => {
-      console.log(err);
+
       res.status(500).json(err);
     });
 });

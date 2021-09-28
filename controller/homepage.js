@@ -1,8 +1,20 @@
+const { User } = require('../Models');
+
 const router = require('express').Router();
 
 router.get('/', (req, res) => {
-    console.log(req.user);
-    res.render('homepage');
+    
+    console.log(req.session.passport.user);
+    User.findOne({
+        where: {
+            id: req.session.passport.user
+        },
+        attributes: ['username']
+    }).then(dbData => {
+        res.render('homepage', dbData.dataValues);
+    }).catch(err => {
+        res.status(500).json(err)
+    })
 });
 
 module.exports = router;

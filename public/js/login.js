@@ -13,7 +13,7 @@ async function logInFormHandler(event) {
       }),
       headers: { 'Content-Type': 'application/json' }
     });
-    console.log(response,'login submitted');
+    console.log(response, 'login submitted');
   }
 }
 
