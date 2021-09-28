@@ -1,9 +1,7 @@
-const { User } = require('../Models');
-
 const router = require('express').Router();
 
 router.get('/', (req, res) => {
-    res.render('homepage');
+    res.render('submit');
 });
 
 module.exports = router;
