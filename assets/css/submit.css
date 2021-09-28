@@ -13,10 +13,11 @@
   }
 
 .drop-down {
-    margin: 20px 0 20px 0;
+    margin: 20px 0 20px 20px;
     display: flex;
     flex-wrap: row;
     width: 10%;
+    border-radius: 10px;
   }
   
   /* styling for the tags 'Questions?' and 'Return Home' */
@@ -68,8 +69,13 @@ body {
     background-color: rgba(255,255,255, 0.75);
   }
 
+.contact-form input {
+  margin-left: 20px;
+}
+
 .contact-form textarea {
-      height: 150px;
+  margin-left: 20px;
+  height: 150px;
   }
 
 .contact-form input:focus, .contact-form textarea:focus {
@@ -78,9 +84,9 @@ body {
   }
 .contact-form button {
     width: 10%;
-    margin: auto;
+    margin-left: 20px;
     border: none;
-    background: var(--primary-color);
+    background: WhiteSmoke;
     color: var(--secondary-color);
     text-align: center;
     padding: 15px 0;
