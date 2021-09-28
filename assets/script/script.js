@@ -18,8 +18,8 @@ var Email = document.querySelector("#Email").value;
 
 //fetch api for login
 var getTicket = (user) => {
-  var apiKey = "";
-  var apiUrl = "http:localHost3001." + user + `${apiKey}`;
+
+  const apiUrl = "http://localHost3000/" + user + "/Ticket";
   fetch(apiUrl).then(function (response) {
     if (response.ok) {
       response.json().then(function (data) {
