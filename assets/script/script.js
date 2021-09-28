@@ -12,14 +12,14 @@ var loginBtn = document.querySelector("#login-btn");
 var signUpBtn = document.querySelector("#sign-up");
 
 //
-var Username = document.querySelector("#username").value;
-var Password = document.querySelector("#newpassword").value;
-var Email = document.querySelector("#email").value;
+var Username = document.querySelector("#Username").value;
+var Password = document.querySelector("#newPassword").value;
+var Email = document.querySelector("#Email").value;
 
 //fetch api for login
 var getTicket = (user) => {
   var apiKey = "";
-  var apiUrl = "" + user + `${apiKey}`;
+  var apiUrl = "http:localHost3001." + user + `${apiKey}`;
   fetch(apiUrl).then(function (response) {
     if (response.ok) {
       response.json().then(function (data) {
@@ -66,9 +66,9 @@ userformEl.addEventListener("submit", submitHandler);
 //create a new Account
 var signUpHandler = (event) => {
   event.preventDefault();
-  var Username = document.querySelector("#username").value;
-  var Password = document.querySelector("#newpassword").value;
-  var Email = document.querySelector("#email").value;
+  var Username = document.querySelector("#Username").value;
+  var Password = document.querySelector("#newPassword").value;
+  var Email = document.querySelector("#Email").value;
   let usernameProfile = [];
   let profile_object = {};
   profile_object.username = Username;
@@ -96,9 +96,8 @@ var signUpHandler = (event) => {
 var displayLogin = (ticket) => {
 
   for (let i = 0; i < ticket.length; i++) {
-
     var ticketEl = document.createElement("a");
-    //towards  your 
+   
     ticketEl.setAttribute = ("href", "./homepage.html?ticket=");
     ticketEl.setAttribute = ("target", "_blank");
     ticketContainerEl.appendChild(ticketEl);
