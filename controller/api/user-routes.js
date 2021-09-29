@@ -40,23 +40,21 @@ router.post('/', (req, res) => {
     password: req.body.password,
     role: req.body.role
   }).then(dbUserData => {
-    const user = dbUserData.dataValues
-    console.log('starting login');
-    req.login(user, async function(err) {
-      if (err) { return next(err); }
-      console.log('no errors');
-      console.log(req.session);
-      return res.status(200);
-    });
+    // const user = dbUserData.dataValues
+    // console.log('starting login');
+    // req.login(user, async function(err) {
+    //   if (err) { return next(err); }
+    //   console.log('no errors');
+    //   console.log(req.session);
+    //   return res.status(200);
+    // });
   });
 });
 
 router.post('/login', passport.authenticate('local', {
   failureRedirect: '/',
   failureFlash: true
-}), async (req, res) => {
-  console.log('login successful');
-  console.log(req.session);
+}), (req, res) => {
   res.redirect('/homepage');
 });
 

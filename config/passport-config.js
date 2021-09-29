@@ -2,26 +2,30 @@ const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 const bcrypt = require('bcrypt');
 const User = require('../Models/User');
+// await bcrypt.compareSync(password, user.password
+// return done(null, false, { message: 'Username or Password is incorrect' });
+// return done(null, false, { message: 'Username or Password is incorrect' });
 
 const authenticateUser = async (username, password, done) => {
-
-    const user = await (await User.findOne({ where: { username: username } }));
-
-    if (user == null) {
-        console.log('no user');
-        return done(null, false, { message: 'Username or Password is incorrect' });
-    }
-    try {
-        if (await bcrypt.compareSync(password, user.password)) {
-            console.log('correct password');
-            return done(null, user);
-        } else {
-            console.log('wrong password');
+    
+    User.findOne({
+        where: {
+            username: username
+        }
+    }).then(async user => {
+        const passwordVer =  await bcrypt.compareSync(password, user.password);
+        console.log(passwordVer)
+        if(!user){
+            console.log('no user');
+            return done(null, false, { message: 'Username or Password is incorrect' });
+        }else if(passwordVer){
+            console.log('incorrect password');
             return done(null, false, { message: 'Username or Password is incorrect' });
         }
-    } catch (err) {
-        return done(err);
-    }
+        return done(null, user);
+    }).catch(err => {
+        return done(err)
+    });
 }
 
 
