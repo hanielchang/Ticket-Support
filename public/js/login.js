@@ -1,10 +1,4 @@
-// var createBtn = $("#create-account");
-// var closeBtn = $(".close");
-// var modalClose = $("#modal-close");
-// var signUpBtn = $("sign-up");
-
 async function logInFormHandler(event) {
-  event.preventDefault();
 
   const username = $('#username-login').val().trim();
   const password = $('#password-login').val().trim();
@@ -19,9 +13,7 @@ async function logInFormHandler(event) {
       headers: { 'Content-Type': 'application/json' }
     });
     console.log(response, 'login submitted');
-    if (response.ok) {
-      // window.location.href = '/homepage';
-    }
+    window.location.reload();
   }
 }
 
@@ -29,7 +21,7 @@ $('#login-form').on('submit', logInFormHandler);
 
 
 async function registerFormHandler(event) {
-  event.preventDefault();
+  // event.preventDefault();
 
   console.log('submit signup');
 
@@ -49,21 +41,11 @@ async function registerFormHandler(event) {
       headers: { 'Content-Type': 'application/json' }
     });
     console.log(response);
-    // window.location.href = '/homepage';
+    window.location.reload();
   }
 }
 
 $('#sign-up').on('click', registerFormHandler);
-
-// var displayLogin = (tickets) => {
-
-//   for (let i = 0; i < tickets.length; i++) {
-//     var ticketEl = document.createElement("a");
-//     ticketEl.setAttribute = ("target", "_blank");
-//   }
-//   // clear 
-// }
-
 
 $("#create-account").on('click', () => {
   $(".modal-fade").css('display', 'grid');

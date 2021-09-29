@@ -7,7 +7,7 @@
     <main class="flex-column justify-space-between">
         <div class="col-12 col-md-4">
             <div class="card">
-                <form id="login-form" class="card-body">
+                <form id="login-form" class="card-body" method="POST" action="/api/users/login">
                     <label class="form-label" for="username-login">Username:</label>
                     <input name="username-login" id="username-login" type="username" autofocus="true" class="form-input" />
                     </br>
@@ -32,7 +32,7 @@
                             </button>
                         </div>
                         <div class="modal-body">
-                            <form id="signup-form" id='login'>
+                            <form id="signup-form">
                                 <label class="modal-label" for="username-register"></label>
                                 <input name="username-register" id="username-register" type="username" autofocus="true"
                                     placeholder="Choose username" />

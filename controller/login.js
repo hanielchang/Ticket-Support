@@ -1,6 +1,7 @@
 const router = require('express').Router();
+const { isLoggedOut } = require('../helpers/auth');
 
-router.get('/', (req, res) => {
+router.get('/', isLoggedOut, (req, res) => {
     res.render('login');
 });
 

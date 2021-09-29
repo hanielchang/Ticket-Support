@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const { User } = require('../../Models');
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 const passport = require('passport');
 
 router.get('/', (req, res) => {
@@ -11,6 +11,38 @@ router.get('/', (req, res) => {
 
       res.status(500).json(err);
     });
+});
+
+router.post('/', (req, res) => {
+
+  User.create({
+    username: req.body.username,
+    email: req.body.email,
+    password: req.body.password,
+    role: req.body.role
+  }).then(dbUserData => {
+    const user = dbUserData.dataValues
+    console.log('starting login');
+    req.login(user, async function(err) {
+      if (err) { return next(err); }
+      console.log(req.session);
+      res.redirect('/homepage')
+    });
+  });
+});
+
+router.post('/login', passport.authenticate('local', {
+  failureRedirect: '/',
+  failureFlash: true
+}), async (req, res) => {
+  console.log(req.session);
+  res.redirect('/homepage');
+});
+
+router.get('/logout', (req, res) => {
+  console.log('logged out');
+  req.logout();
+  res.redirect('/');
 });
 
 router.get('/:id', (req, res) => {
@@ -30,37 +62,6 @@ router.get('/:id', (req, res) => {
 
       res.status(500).json(err);
     });
-});
-
-router.post('/', (req, res) => {
-
-  User.create({
-    username: req.body.username,
-    email: req.body.email,
-    password: req.body.password,
-    role: req.body.role
-  }).then(dbUserData => {
-    // const user = dbUserData.dataValues
-    // console.log('starting login');
-    // req.login(user, async function(err) {
-    //   if (err) { return next(err); }
-    //   console.log('no errors');
-    //   console.log(req.session);
-    //   return res.status(200);
-    // });
-  });
-});
-
-router.post('/login', passport.authenticate('local', {
-  failureRedirect: '/',
-  failureFlash: true
-}), (req, res) => {
-  res.redirect('/homepage');
-});
-
-router.get('/logut', async (req, res) => {
-  req.logOut();
-  res.redirect('/');
 });
 
 router.put('/:id', (req, res) => {

@@ -1,10 +1,7 @@
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 const User = require('../Models/User');
-// await bcrypt.compareSync(password, user.password
-// return done(null, false, { message: 'Username or Password is incorrect' });
-// return done(null, false, { message: 'Username or Password is incorrect' });
 
 const authenticateUser = async (username, password, done) => {
     
@@ -18,7 +15,7 @@ const authenticateUser = async (username, password, done) => {
         if(!user){
             console.log('no user');
             return done(null, false, { message: 'Username or Password is incorrect' });
-        }else if(passwordVer){
+        }else if(!passwordVer){
             console.log('incorrect password');
             return done(null, false, { message: 'Username or Password is incorrect' });
         }

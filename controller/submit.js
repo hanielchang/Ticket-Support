@@ -1,6 +1,7 @@
+const { isloggedIn } = require('../helpers/auth');
 const router = require('express').Router();
 
-router.get('/', (req, res) => {
+router.get('/', isloggedIn,(req, res) => {
     res.render('submit');
 });
 
