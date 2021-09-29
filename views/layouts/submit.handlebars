@@ -1,10 +1,12 @@
+{{!-- I added the ticket id on line 8 so that it can be traced as to which item is being edited or deleted.
+--}}
 <ol class="post-list">
     {{#each tickets as |ticket|}}
     <li>
-        <div class="ticket">
-            <!-- <h2 class="title">Software programming issue</h2> -->
-            <div class="ticket-info">
+        <div class="ticket" >
+            <div class="ticket-info" id="{{ticket.id}}">
                 <div class="flex-wrap left-side">
+                    <p class="title">Title: {{ticket.title}</p>
                     <p class="requestor">Requestor: {{ticket.user}}</p>
                     <textarea id="description" readonly>
 
