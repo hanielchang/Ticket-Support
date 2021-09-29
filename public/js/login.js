@@ -21,14 +21,12 @@ $('#login-form').on('submit', logInFormHandler);
 
 
 async function registerFormHandler(event) {
-  // event.preventDefault();
 
   console.log('submit signup');
 
   const username = $('#username-register').val().trim();
   const email = $('#email-register').val().trim();
   const password = $('#password-register').val().trim();
-  // const role = 'user';
 
   if (username && password && email) {
     const response = await fetch('/api/users', {

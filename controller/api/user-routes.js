@@ -13,6 +13,18 @@ router.get('/', (req, res) => {
     });
 });
 
+router.get('/user_data', function(req, res) {
+res.send("test");
+  // if (req.user === undefined) {
+  //     // The user is not logged in
+  //     res.json({});
+  // } else {
+  //     res.json({
+  //         username: req.user
+  //     });
+  // }
+});
+
 router.post('/', (req, res) => {
 
   User.create({
@@ -36,6 +48,7 @@ router.post('/login', passport.authenticate('local', {
   failureFlash: true
 }), async (req, res) => {
   console.log(req.session);
+  let currentUser = req.session.passport.user;
   res.redirect('/homepage');
 });
 
