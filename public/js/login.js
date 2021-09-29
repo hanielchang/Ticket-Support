@@ -27,7 +27,6 @@ async function registerFormHandler(event) {
   const username = $('#username-register').val().trim();
   const email = $('#email-register').val().trim();
   const password = $('#password-register').val().trim();
-  // const role = 'user';
 
   if (username && password && email) {
     const response = await fetch('/api/users', {
