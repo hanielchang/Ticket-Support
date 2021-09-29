@@ -21,7 +21,6 @@ $('#login-form').on('submit', logInFormHandler);
 
 
 async function registerFormHandler(event) {
-  // event.preventDefault();
 
   console.log('submit signup');
 
