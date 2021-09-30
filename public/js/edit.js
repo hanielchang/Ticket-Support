@@ -23,4 +23,5 @@ async function SubmitFormHandler(event) {
       window.location.href = '/homepage';
     
   }
-  $('#submit').on('click', SubmitFormHandler);
+  
+//   $('#submit').on('click', SubmitFormHandler);

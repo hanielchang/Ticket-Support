@@ -11,7 +11,7 @@
     </div>
 </div>
 <div class="contact-form">
-    <form id="form">
+    <form id="form" data-id="{{id}}">
         <select class="drop-down" id="options">
             <option value="Software">Software</option>
             <option value="Hardware">Hardware</option>
@@ -21,10 +21,10 @@
         </select>
 
         <label for="title">Enter a title</label>
-        <input type="text" id="title" placeholder="{{}}" />
+        <input type="text" id="title" placeholder="Title" />
 
         <label for="description">Enter your description</label>
-        <textarea id="description" placeholder="{{}}"></textarea>
+        <textarea id="description" placeholder="Body"></textarea>
 
         <button type="button" id="submit">Submit</button>
     </form>

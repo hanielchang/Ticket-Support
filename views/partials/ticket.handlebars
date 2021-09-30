@@ -7,15 +7,16 @@
                 <textarea class="description" readonly>{{content}}</textarea>
             </div>
             <div class="flex-wrap right-side ">
+                <p class="requestor">Title: {{title}}</p>
                 {{!-- <p class="info" id="date">Submission Date: {{created_at}}</p> --}}
                 <p class="info">Type: {{category}}</p>
                 <p class="info">Status: {{status}}</p>
-                <button type="submit" class="delete-btn button" data-id="{{id}}">
+                <button type="submit" class="delete-btn button" data-deleteid="{{id}}">
                     Delete
                 </button>
-                <button type="submit" class="button">
+                {{!-- <button type="submit" class="button edit-btn" data-editid="{{id}}">
                     Edit
-                </button>
+                </button> --}}
             </div>
         </div>
     </div>

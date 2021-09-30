@@ -27,7 +27,6 @@ router.get('/', isloggedIn, (req, res) => {
         }
         const tickets = dbUserData.dataValues.Tickets.map(ticket => ticket.get({ plain: true }));
         console.log(tickets);
-        // console.log(dbUserData.dataValues.Tickets);
         res.render('homepage', { user: dbUserData.dataValues, tickets: tickets });
     }).catch(err => {
         res.status(500).json(err);

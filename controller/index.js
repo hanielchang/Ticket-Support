@@ -8,7 +8,7 @@ const editRoute = require('./edit');
 router.use('/api', api);
 router.use('/', loginRoute);
 router.use('/submit', submitRoute);
-router.use('edit',editRoute);
+router.use('/edit',editRoute);
 router.use('/homepage', homepageRoute);
 
 module.exports = router;
