@@ -1,4 +1,4 @@
-async function logInFormHandler(event) {
+async function logInFormHandler() {
 
   const username = $('#username-login').val().trim();
   const password = $('#password-login').val().trim();
@@ -12,6 +12,7 @@ async function logInFormHandler(event) {
       }),
       headers: { 'Content-Type': 'application/json' }
     });
+    console.log(username,password);
     console.log(response, 'login submitted');
     window.location.reload();
   }
@@ -20,7 +21,7 @@ async function logInFormHandler(event) {
 $('#login-form').on('submit', logInFormHandler);
 
 
-async function registerFormHandler(event) {
+async function registerFormHandler() {
 
   console.log('submit signup');
 
@@ -29,7 +30,7 @@ async function registerFormHandler(event) {
   const password = $('#password-register').val().trim();
 
   if (username && password && email) {
-    const response = await fetch('/api/users', {
+    const response = await fetch('/api/users/', {
       method: 'POST',
       body: JSON.stringify({
         username,

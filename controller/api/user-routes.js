@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User } = require('../../Models');
+const { User, Ticket } = require('../../Models');
 const bcrypt = require('bcryptjs');
 const passport = require('passport');
 
@@ -13,16 +13,29 @@ router.get('/', (req, res) => {
     });
 });
 
-router.get('/user_data', function(req, res) {
-res.send("test");
-  // if (req.user === undefined) {
-  //     // The user is not logged in
-  //     res.json({});
-  // } else {
-  //     res.json({
-  //         username: req.user
-  //     });
-  // }
+router.get('/user_data', function (req, res) {
+  User.findOne({
+    where: {
+      id: 1
+    },
+    include: [
+      {
+        model: Ticket,
+        attributes: [
+          'id',
+          'title',
+          'category',
+          'content',
+          'status',
+          'created_at'
+        ]
+      }
+    ]
+  })
+    .then(dbUserData => res.json(dbUserData))
+    .catch(err => {
+      res.status(500).json(err);
+    });
 });
 
 router.post('/', (req, res) => {
@@ -35,7 +48,7 @@ router.post('/', (req, res) => {
   }).then(dbUserData => {
     const user = dbUserData.dataValues
     console.log('starting login');
-    req.login(user, async function(err) {
+    req.login(user, async function (err) {
       if (err) { return next(err); }
       console.log(req.session);
       res.redirect('/homepage')
@@ -48,7 +61,6 @@ router.post('/login', passport.authenticate('local', {
   failureFlash: true
 }), async (req, res) => {
   console.log(req.session);
-  let currentUser = req.session.passport.user;
   res.redirect('/homepage');
 });
 
@@ -63,18 +75,15 @@ router.get('/:id', (req, res) => {
     where: {
       id: req.params.id
     }
-  })
-    .then(dbUserData => {
-      if (!dbUserData) {
-        res.status(404).json({ message: 'No user found with this id' });
-        return;
-      }
-      res.json(dbUserData);
-    })
-    .catch(err => {
-
-      res.status(500).json(err);
-    });
+  }).then(dbUserData => {
+    if (!dbUserData) {
+      res.status(404).json({ message: 'No user found with this id' });
+      return;
+    }
+    res.json(dbUserData);
+  }).catch(err => {
+    res.status(500).json(err);
+  });
 });
 
 router.put('/:id', (req, res) => {

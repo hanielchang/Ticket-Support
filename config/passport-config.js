@@ -10,12 +10,10 @@ const authenticateUser = async (username, password, done) => {
             username: username
         }
     }).then(async user => {
-        const passwordVer =  await bcrypt.compareSync(password, user.password);
-        console.log(passwordVer)
         if(!user){
             console.log('no user');
             return done(null, false, { message: 'Username or Password is incorrect' });
-        }else if(!passwordVer){
+        }else if(!await bcrypt.compareSync(password, user.password)){
             console.log('incorrect password');
             return done(null, false, { message: 'Username or Password is incorrect' });
         }
