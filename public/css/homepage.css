@@ -1,4 +1,7 @@
+<<<<<<< HEAD:public/css/homepage.css
 /* ---------------------------- */
+=======
+>>>>>>> haniel/front-end:assets/css/homepage.css
 
 .requestor {
   font-style: italic;
@@ -16,7 +19,6 @@
 .ticket {
   padding-top: 30px;
   padding-bottom: 20px;
-  /* background-color:#024e76; */
 }
 
 .ticket-list {
@@ -32,9 +34,6 @@
   border-radius: 15px;
   background-image: linear-gradient(180deg, SlateGrey, WhiteSmoke);
   color: #000000;
-  /* margin: 3.5%; */
-  /* font-size: 18px; */
-  /* line-height: 1.2;  */
   }
 
 

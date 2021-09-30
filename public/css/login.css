@@ -1,0 +1,94 @@
+   
+/* body [
+    --color-primary:
+] */
+
+.btn {
+    text-align: center;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.form-input {
+    width: 100%;
+}
+ #category {
+     margin-top: 10px;
+     width: 50%;
+     
+ }
+
+ .modal-fade {
+     display:none;
+     position: fixed;
+     z-index: 1;
+     left: 0;
+     top: 0;
+     height: 100%;
+     width: 100%;
+     overflow: auto;
+     /* background:url(./assets/img/ticket-support.jpg); */
+     background-color: rgba(0,0,0, 0.5);
+     text-align: center;
+ }
+ #Email, #newPassword, #Password, #Username{
+    
+     width: 88%;
+     margin: 10px;
+     
+
+ }
+
+ .modal-content {
+
+     display: inline;
+     background-color: #f4f4f4;
+     margin:auto;
+     padding: 20px;
+     width: 100%;
+     height: 60%;
+     box-shadow: 0 5px 8px 0 rgba(0,0,0, 0.2);
+ }
+
+ .modal-body {
+     display:flex;
+     flex-direction: row;
+     text-align: start;
+ }
+ .close {
+     color: #ccc;
+     float: right;
+     font-size: 30px;
+ }
+
+ .modal-title {
+     margin-left: 100px;
+     text-align: center;
+     font-weight: bolder;
+     
+ }
+
+ .modal-label {
+
+ }
+
+ .close:hover, .closeBtn:focus {
+     color:#000;
+     text-decoration: none;
+     cursor: pointer;
+ }
+
+ @media (min-width: 576px) { 
+.jumbotron {
+
+} 
+ .modal-body {
+     display:flex;
+     flex-direction: row;
+     text-align: start;
+ }
+ .modal-content {
+     overflow: hidden;
+   
+ } 
+ }
