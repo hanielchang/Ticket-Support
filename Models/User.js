@@ -36,7 +36,7 @@ User.init(
         type: DataTypes.STRING,
         allowNull: false,
         defaultValue: 'user'
-      }
+      },
     },
     {
       hooks: {

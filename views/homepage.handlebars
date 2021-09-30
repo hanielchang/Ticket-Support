@@ -1,7 +1,12 @@
 <div class="header">
-    <h1>Ticket Support</h1>
+    <a href="/">
+        <h1>Ticket Support</h1>
+    </a>
     <div>
         <ul>
+            <li>
+                <p id="user">{{user.username}}</p>
+            </li>
             <li>
                 <a href="#" id="logout">Logout</a>
             </li>
@@ -17,8 +22,10 @@
 </div>
 
 <div class="ticket-list">
-    <p class="total">Total Tickets: 3</p>
-    {{> ticket }}
+    {{!-- <p class="total">Total Tickets: 3</p> --}}
+    {{#each tickets as |ticket|}}
+    {{> ticket ticket}}
+    {{/each}}
 </div>
 
 <script src="./js/homepage.js"></script>

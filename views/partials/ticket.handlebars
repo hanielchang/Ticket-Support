@@ -3,16 +3,14 @@
         <!-- <h2 class="title">Software programming issue</h2> -->
         <div class="ticket-info">
             <div class="flex-wrap left-side">
-                <p class="requestor">Requestor: {{ticket.user}}</p>
-                <textarea id="description" readonly>
-
-                    </textarea>
+                {{!-- <p class="requestor">Requestor: {{user}}</p> --}}
+                <textarea class="description" readonly>{{content}}</textarea>
             </div>
-            <div class="flex-wrap right-side data-{{ticket.id}}">
-                <p class="info" id="date">Submission Date: {{ticket.date}}</p>
-                <p class="info">Type: {{ticket.category}}</p>
-                <p class="info">Status: {{ticket.status}}</p>
-                <button type="submit" class="button">
+            <div class="flex-wrap right-side ">
+                {{!-- <p class="info" id="date">Submission Date: {{created_at}}</p> --}}
+                <p class="info">Type: {{category}}</p>
+                <p class="info">Status: {{status}}</p>
+                <button type="submit" class="delete-btn button" data-id="{{id}}">
                     Delete
                 </button>
                 <button type="submit" class="button">
