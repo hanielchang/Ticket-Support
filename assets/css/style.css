@@ -64,9 +64,6 @@
      
  }
 
- .modal-label {
-
- }
 
  .close:hover, .closeBtn:focus {
      color:#000;
@@ -74,17 +71,4 @@
      cursor: pointer;
  }
 
- @media (min-width: 576px) { 
-.jumbotron {
-
-} 
- .modal-body {
-     display:flex;
-     flex-direction: row;
-     text-align: start;
- }
- .modal-content {
-     overflow: hidden;
-   
- } 
- }
+ 
