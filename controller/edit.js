@@ -12,6 +12,7 @@ router.get('/:id', isloggedIn, (req, res) => {
             return;
         }
         console.log(dbUserData);
+        res.render('edit');
     }).catch(err => {
         res.status(500).json(err);
     });
