@@ -58,10 +58,10 @@ router.post('/', (req, res) => {
 
 router.post('/login', passport.authenticate('local', {
   failureRedirect: '/',
+  successRedirect: '/homepage',
   failureFlash: true
 }), async (req, res) => {
-  console.log(req.session);
-  res.redirect('/homepage');
+  res.status(200).json({message: 'login successful'});
 });
 
 router.get('/logout', (req, res) => {

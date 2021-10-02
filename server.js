@@ -5,7 +5,7 @@ const path = require('path');
 const router = require('./controller');
 const dotenv = require('dotenv');
 const passport = require('passport');
-const flash = require('express-flash');
+const flash = require('connect-flash');
 const initializePassport = require('./config/passport-config');
 const sequelize = require('./config/connection');
 
