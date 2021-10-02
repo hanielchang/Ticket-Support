@@ -10,11 +10,13 @@ and submit page. It does not contain css for the login page however.
   }
   
   .header h1 {
+    color: #ffffff;
     display: inline-block;
     font-size: 48px;
   }
   
   .header div {
+    color: #ffffff;
     padding-top: 15px;
     margin-right: 20px;
     float: right;
@@ -22,11 +24,11 @@ and submit page. It does not contain css for the login page however.
     font-size: 20px;
   }
   
-  a {
+  .header div a {
     color: #ffffff;
     text-decoration: none;
   }
-  
+
   .header div ul {
     list-style-type: none;
   }

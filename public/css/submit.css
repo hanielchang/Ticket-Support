@@ -14,11 +14,14 @@
   }
 
 body {
-    background-image: url("../images/laptop.jpg");
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    background-position: 80%;
+    /* background-image: linear-gradient(to bottom right, rbg(20,20,20), rbg(50,50,50)); */
+    background-image: linear-gradient(135deg,rgb(20, 20, 20), rgb(60, 60, 60));
+    /* background-size: contain; */
+    /* background-position: center; */
+    /* background-repeat: no-repeat; */
+    /* background-attachment: fixed; */
+    /* background-position: 80%; */
+    /* width: 100%; */
 }
 
 .contact-form input, .contact-form textarea {
@@ -50,9 +53,9 @@ body {
 .contact-form button {
     width: 10%;
     margin-left: 20px;
-    margin-bottom: 500px;
+    /* margin-bottom: 500px; */
     border: none;
-    background: WhiteSmoke;
+    background: rgb(211, 210, 210);
     color: var(--secondary-color);
     text-align: center;
     padding: 15px 0;
