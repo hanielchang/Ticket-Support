@@ -7,18 +7,19 @@
     <main class="flex-column justify-space-between">
         <div class="col-12 col-md-4">
             <div class="card">
-                <form id="login-form" class="card-body" method="POST" action="/api/users/login">
+                <form id="login-form" class="card-body has-validation" method="POST" action="/api/users/login" novalidate>
                     <div>
                         {{#if error}}
                         <h3>{{error.[0]}}</h3>
                         {{/if}}
                     </div>
                     <label class="form-label" for="username-login">Username:</label>
-                    <input name="username-login" id="username-login" type="username" autofocus="true" class="form-input" />
+                    <input name="username-login" id="username-login" type="username" autofocus="true"
+                        class="form-input" />
                     </br>
                     <label class="form-label" for="password-login">password:</label>
-                    <input name="password-login" id="password-login" type="password" autofocus="true"
-                        class="form-input" minlength="8" required /> </br>
+                    <input name="password-login" id="password-login" type="password" autofocus="true" class="form-input"
+                        minlength="8" required /> </br>
                     <button type="submit" value="sign in" class="btn btn-primary text-center"
                         id="login-btn">Login</button>
                     <button type="button" value="signUp" id="create-account" class="btn btn-success text-center"
@@ -41,15 +42,27 @@
                                 <label class="modal-label" for="username-register"></label>
                                 <input name="username-register" id="username-register" type="username" autofocus="true"
                                     placeholder="Choose username" />
+                                <div class="invalid-feedback">
+                                    username is taken
+                                </div>
                                 <label class="modal-label" for="email-register"></label>
                                 <input name="email-register" id="email-register" type="email" autofocus="true"
                                     placeholder="email" />
+                                <div class="invalid-feedback">
+                                    email is already in use
+                                </div>
                                 <label class="modal-label" for="password-register"></label>
                                 <input name="password-register" id="password-register" type="password" autofocus="true"
                                     minlength="8" placeholder="New Password" />
-                                {{!-- <label class="modal-label" for="Password"></label>
-                                <input name="password" id="Password" type="password" autofocus="true"
-                                    placeholder="Confirm Password" /> --}}
+                                <div class="invalid-feedback">
+                                    password must be between 
+                                </div>
+                                {{!-- <label class="modal-label" for="confrim-password"></label>
+                                <input name="password" id="confrim-password" type="password" autofocus="true"
+                                    placeholder="Confirm Password" />
+                                <div class="invalid-feedback">
+                                    passwords do not match
+                                </div> --}}
                             </form>
                         </div>
                         <div class="modal-footer">
