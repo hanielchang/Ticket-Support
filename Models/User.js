@@ -29,7 +29,7 @@ User.init(
         type: DataTypes.STRING,
         allowNull: false,
         validate: {
-        len: [7]
+        len: [7,13]
         }
       },
       role: {

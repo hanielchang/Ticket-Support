@@ -1,8 +1,8 @@
-async function logoutHandler(event) {
-
+async function logoutHandler() {
+  console.log('log out');
   const response = await fetch('/api/users/logout');
-  window.location.reload();
   console.log(response);
+  window.location.reload();
 };
 
 $('#logout').on('click', logoutHandler);
@@ -22,8 +22,8 @@ $('.delete-btn').on('click', deleteTicketHandler);
 async function editTicketHandler() {
 
   const btnvalue = $(this).data('editid');
-  console.log(`clicked: ${btnvalue}`)
-  window.location.href = `/edit/${btnvalue}`;
+  // console.log(`clicked: ${btnvalue}`)
+  window.location.href = `/edit`;
 }
 
 $('.edit-btn').on('click', editTicketHandler);

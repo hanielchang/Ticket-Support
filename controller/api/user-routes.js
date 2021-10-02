@@ -13,30 +13,35 @@ router.get('/', (req, res) => {
     });
 });
 
-router.get('/user_data', function (req, res) {
-  User.findOne({
-    where: {
-      id: 1
-    },
-    include: [
-      {
-        model: Ticket,
-        attributes: [
-          'id',
-          'title',
-          'category',
-          'content',
-          'status',
-          'created_at'
-        ]
-      }
-    ]
-  })
-    .then(dbUserData => res.json(dbUserData))
-    .catch(err => {
-      res.status(500).json(err);
-    });
-});
+// router.get('/username/:username', (req, res) => {
+//   console.log('searching for username');
+//   User.findOne({where: 
+//     { username: req.params.username}
+//   }).then(dbUserData => {
+//     console.log(dbUserData);
+//     if(!dbUserData){
+//       res.status(404).json({message: 'no user with that username'});
+//     }
+//     res.status(200);
+//   }).catch(err => {
+//     res.status(500).json({message: err});
+//   });
+// });
+
+// router.get('/email/:email', (req, res) => {
+//   console.log('searching for email');
+//   User.findOne({where: 
+//     {email: req.params.email}
+//   }).then(dbUserData => {
+//     console.log(dbUserData);
+//     if(!dbUserData){
+//       res.status(404).json({message: 'no user with that email'});
+//     }
+//     res.status(200)
+//   }).catch(err => {
+//     res.status(500).json({message: err})
+//   });
+// })
 
 router.post('/', (req, res) => {
 
@@ -61,13 +66,14 @@ router.post('/login', passport.authenticate('local', {
   successRedirect: '/homepage',
   failureFlash: true
 }), async (req, res) => {
-  res.status(200).json({message: 'login successful'});
+  res.status(200).json({message: 'logout successful'});
 });
 
 router.get('/logout', (req, res) => {
   console.log('logged out');
-  req.logout();
-  res.redirect('/');
+  res.json({message: 'logged out'});
+  req.session.destroy();
+  // res.redirect('/');
 });
 
 router.get('/:id', (req, res) => {
