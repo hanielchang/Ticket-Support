@@ -13,22 +13,18 @@
     border-radius: 10px;
   }
   
-  /* styling for the tags 'Questions?' and 'Return Home' */
+  
   .header h1 {
     display: inline-block;
     font-size: 48px;
-    /* font-size: 48px; */
   }
   
   .header div {
-    /* margin-right: 20px; */
     padding-top: 15px;
     margin-right: 20px;
     float: right;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 20px;
-    /* font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; */
-    /* font-size: 20px; */
   }
   
   a {
@@ -47,7 +43,6 @@
 
 .card {
  position: relative;
-
  left: 200%;
  top: 20px;
 } 
@@ -80,13 +75,13 @@
      background-color: rgba(0,0,0, 0.5);
      text-align: center;
  }
- #email, #newpassword{
+ #username-register, #email-register, #password-register {
      top: 12px;
      width: 88%;
      margin: 10px;
      position: relative;
      right:5px;
-
+     
  }
 
  .modal-content {
@@ -121,18 +116,4 @@
      color:#000;
      text-decoration: none;
      cursor: pointer;
- }
-
- @media (min-width: 576px) { 
-     
- .modal-body {
-     display:flex;
-     flex-direction: row;
-     text-align: start;
- }
- .modal-content {
-  align-items:flex-end;
-     
- } 
- 
  }
