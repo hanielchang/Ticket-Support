@@ -23,11 +23,13 @@ The purpose of this project is test our Full Stack programming knowlege by creat
 
 ## Table of Contents
 
-* [Installation Manual](#installation)
-* [Usage](#usage)
+* [Installation Manual](#installation-manual)
+* [Usage Usage Manual](#usage-manual)
+* [Usage Usage Heroku](#usage-heroku)
+* [Screenshots](#screenshots)
 * [License](#license)
 
-## Installation Manual
+## Installation-Manual
 
 1. Download/Clone app from github repository
 2. Open terminal and navigate to the root folder of the app (It should contain the server.js file).
@@ -35,7 +37,7 @@ The purpose of this project is test our Full Stack programming knowlege by creat
 4. Create a new MYSQL database with the name help_ticket_support_db;
 5. Once the dependencies finish installing and the MYSQL database was create run the `node server.js` to launch the application.
 
-## Usage Manual
+## Usage-Manual
 
 1. Open terminal and navigate to the root folderof the application.
 2. Once you are in the root folder run the command `node server.js`
@@ -50,12 +52,24 @@ The purpose of this project is test our Full Stack programming knowlege by creat
 2. Create a User and login to the database.
 3. Create/Delete a ticket from the database.
 
+## Screenshots
+
+### Login Page
+![login page](./public/images/login.png)
+
+### Create User
+![create-user](./public/images/create_user.png)
+
+### Homepage Page
+![homepage](./public/images/homepage.png)
+
+### Create Ticket Page
+![create-ticket](./public/images/create_ticket.png)
 
 
-Preview!
 
 
 ## License
 
-MIT
+ISC
     
