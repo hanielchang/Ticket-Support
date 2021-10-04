@@ -38,6 +38,33 @@ and submit page. It does not contain css for the login page however.
     margin-left: 25px;
   }
 
+  @media screen and (max-width: 900px) {
+    .header {
+      padding: 0px;
+      display: inline-block;
+    } 
+
+    /* .header div {
+      padding: 0;
+    } */
+
+    .header h1 {
+      margin-top: 15px;
+      margin-left: 15px;
+      font-size: 24px;
+    }
+
+    .nav-text {
+      display: flex;
+      flex-direction: row;
+    }
+    /* .questions {
+      font-size: 20px;
+      margin-right: 65px;
+    } */
+  }
+
+
   @media screen and (max-width: 575px) {
     .header {
       padding: 0px;
@@ -46,10 +73,6 @@ and submit page. It does not contain css for the login page however.
 
     .header div {
       padding: 0;
-    }
-
-    .header div ul {
-      pa
     }
 
     .header h1 {

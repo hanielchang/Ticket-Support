@@ -1,5 +1,9 @@
 /* ---------------------------- */
 
+body {
+  /* background-image: linear-gradient(180deg, WhiteSmoke, SlateGrey); */
+}
+
 .requestor {
   font-style: italic;
   padding-top: 10px;
@@ -96,3 +100,87 @@ p {
     width: 30%;
 }
 
+@media screen and (max-width: 1280px) { 
+  /* .button {
+    margin-right: 30px;
+    width: 50%;
+  } */
+}
+
+
+@media screen and (max-width: 1024px) { 
+  .button {
+    margin-right: 30px;
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 768px) { 
+  .button {
+    margin-right: 30px;
+    width: 50%;
+  }
+
+  .ticket-info { 
+    width: 80%;
+  }
+
+}
+
+@media screen and (max-width: 540px) { 
+  .button {
+    margin-right: 30px;
+    width: 60%;
+  }
+
+  textarea { 
+    height: 120px;
+  }
+
+  .header h1 {
+    margin-left: 95px;
+  }
+
+  header .nav-text {
+    margin: auto;
+    display: inline-flex;
+  }
+
+  .nav-text a {
+    margin-left: 50px;
+  }
+}
+
+@media screen and (max-width: 400px) { 
+  .button {
+    margin-right: 30px;
+    width: 60%;
+  }
+  
+  textarea { 
+    width: 120px;
+  }
+}
+
+@media screen and (max-width: 320px) { 
+  .ticket-info { 
+    width: 90%;
+  }
+
+  .nav-text {
+    margin: 0 0 10px 0;
+  }
+
+  .info {
+    margin-right: 20px;
+  }
+
+  .button {
+    margin-right: 30px;
+    width: 80%;
+  }
+
+  .header h1 {
+    margin-left: 75px;
+  }
+}

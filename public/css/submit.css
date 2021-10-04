@@ -77,6 +77,10 @@ label {
         margin-left: 20px;
         width: 30%;
       }
+
+      .contact-form button {
+        width: 15%;
+      }
   }
 
   @media screen and (max-width: 1024px) { 
@@ -89,6 +93,9 @@ label {
       .contact-form input {
         margin-left: 20px;
         width: 50%;
+      }
+      .contact-form button {
+        width: 25%;
       }
   }
 
@@ -104,12 +111,37 @@ label {
     .contact-form textarea {
       margin-left: 20px;
       height: 150px;
-      width: 80%;
+      width: 85%;
       }
 
       .contact-form input {
         margin-left: 20px;
-        width: 80%;
+        width: 85%;
+      }
+
+      .contact-form button {
+        width: 50%;
+      }
+  }
+
+  @media screen and (max-width: 320px) { 
+
+    .drop-down {
+      margin: 20px 0 20px 20px;
+      display: flex;
+      flex-wrap: row;
+      width: 50%;
+      border-radius: 10px;
+    }
+    .contact-form textarea {
+      margin-left: 20px;
+      height: 150px;
+      width: 85%;
+      }
+
+      .contact-form input {
+        margin-left: 20px;
+        width: 85%;
       }
 
       .contact-form button {
