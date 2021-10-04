@@ -45,7 +45,7 @@ and submit page. It does not contain css for the login page however.
   @media screen and (max-width: 900px) {
     .header {
       /* padding: 0px; */
-      /* display: inline-block; */
+      display: inline-block;
     } 
 
     .header h1 {
