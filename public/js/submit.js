@@ -1,6 +1,5 @@
 async function SubmitFormHandler(event) {
     let title = $('#title').val();
-    let user = 1;
     let content = $('#description').val().trim();
     let category = $('#options').val();
     let status = 'pending';
@@ -14,8 +13,7 @@ async function SubmitFormHandler(event) {
           title,
           category,
           content,
-          status,
-          user
+          status
         }),
         headers: { 'Content-Type': 'application/json' }
       });
