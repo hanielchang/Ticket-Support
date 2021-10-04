@@ -2,6 +2,10 @@
 and submit page. It does not contain css for the login page however.
  */
 
+ header {
+   width: 200px;
+ }
+
 .header {
     padding: 20px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
