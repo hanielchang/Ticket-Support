@@ -2,6 +2,10 @@
 and submit page. It does not contain css for the login page however.
  */
 
+ header {
+   width: 200px;
+ }
+
 .header {
     padding: 20px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -36,4 +40,72 @@ and submit page. It does not contain css for the login page however.
   .header div ul li {
     display: inline-block;
     margin-left: 25px;
+  }
+
+  @media screen and (max-width: 900px) {
+    .header {
+      padding: 0px;
+      display: inline-block;
+    } 
+
+    /* .header div {
+      padding: 0;
+    } */
+
+    .header h1 {
+      margin-top: 15px;
+      margin-left: 15px;
+      font-size: 24px;
+    }
+
+    .nav-text {
+      display: flex;
+      flex-direction: row;
+    }
+    /* .questions {
+      font-size: 20px;
+      margin-right: 65px;
+    } */
+  }
+
+
+  @media screen and (max-width: 575px) {
+    .header {
+      padding: 0px;
+      display: inline-block;
+    } 
+
+    .header div {
+      padding: 0;
+    }
+
+    .header h1 {
+      margin-top: 10px;
+      margin-left: 65px;
+      font-size: 24px;
+    }
+    .questions {
+      font-size: 20px;
+      margin-right: 65px;
+    }
+  }
+
+  @media screen and (max-width: 320px) {
+    .header {
+      padding: 0px;
+      display: inline-block;
+    } 
+
+    .header div {
+      padding: 0;
+    }
+
+    .header h1 {
+      margin-top: 10px;
+      margin-left: 65px;
+      font-size: 24px;
+    }
+    .questions {
+      font-size: 20px;
+    }
   }
