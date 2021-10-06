@@ -48,7 +48,7 @@ The purpose of this project is test our Full Stack programming knowlege by creat
 
 ## Usage Heroku
 
-1. Open https://radiant-tundra-30535.herokuapp.com/.
+1. Open https://gentle-island-14019.herokuapp.com/.
 2. Create a User and login to the database.
 3. Create/Delete a ticket from the database.
 
